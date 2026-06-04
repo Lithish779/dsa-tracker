@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DSA 30-Day Sheet – 150 Problems</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-title-row">
+        <div class="logo-pill">DSA</div>
+        <h1>30-Day Coding Sheet</h1>
+      </div>
+      <p class="hero-sub">150 hand-picked LeetCode problems spanning Arrays, Two Pointers, Binary Search, Hashing, Strings, Linked Lists, Stacks, Trees, Heaps & DP — one shot, one month.</p>
+      <div class="hero-actions">
+        <button class="btn-reset" onclick="resetProgress()">⟳ Reset</button>
+        <span class="last-updated">Last updated: June 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="progress-bar-global">
+    <div class="progress-bar-fill" id="globalBar"></div>
+  </div>
+
+  <main>
+    <div class="stats-strip">
+      <div class="stat-card" id="statTotal">
+        <span class="stat-num" id="statSolvedNum">0</span>
+        <span class="stat-label">/ 150 Solved</span>
+      </div>
+      <div class="stat-card easy">
+        <span class="dot easy-dot"></span>
+        <span class="stat-num" id="statEasy">0</span>
+        <span class="stat-label">Easy</span>
+      </div>
+      <div class="stat-card medium">
+        <span class="dot medium-dot"></span>
+        <span class="stat-num" id="statMedium">0</span>
+        <span class="stat-label">Medium</span>
+      </div>
+      <div class="stat-card hard">
+        <span class="dot hard-dot"></span>
+        <span class="stat-num" id="statHard">0</span>
+        <span class="stat-label">Hard</span>
+      </div>
+      <div class="stat-card pct">
+        <span class="stat-num" id="statPct">0%</span>
+        <span class="stat-label">Complete</span>
+      </div>
+    </div>
+
+    <div class="filter-row">
+      <button class="filter-btn active" data-filter="all" onclick="setFilter('all',this)">All Problems</button>
+      <button class="filter-btn" data-filter="revision" onclick="setFilter('revision',this)">★ Revision</button>
+      <div class="filter-right">
+        <select id="diffFilter" onchange="applyFilters()">
+          <option value="all">All Difficulties</option>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+        <input type="text" id="searchBox" placeholder="🔍 Search problem..." oninput="applyFilters()"/>
+      </div>
+    </div>
+
+    <div id="sheetsContainer"></div>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
